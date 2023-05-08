@@ -28,7 +28,7 @@ class Search:
         group_data_value = self.df.groupby('Data_Pedido')['Valor_Venda'].sum()
         plt.figure(figsize = (20, 6))
         group_data_value.plot(color = 'green')
-        plt.xlabel('Order Date'),plt.ylabel('Sales Value'),plt.title('Total de vendas por data')
+        plt.xlabel('Data Pedido'),plt.ylabel('Valor Vendas'),plt.title('Total de vendas por data')
         plt.show()
 
     def total_sales_by_state(self):   
@@ -88,11 +88,11 @@ class Search:
         sales_after = self.df.loc[self.df['Desconto'] == 0.15, 'Valor_Venda_Desconto']
         mean_before = round(sales_before.mean(), 2)
         mean_after = round(sales_after.mean(), 2)
-        valores_medios = [mean_before, mean_after]
+        mean_values = [mean_before, mean_after]
 
         labels = ['Antes', 'Depois']
 
-        plt.bar(labels, valores_medios)
+        plt.bar(labels, mean_values)
 
         plt.title('Comparação de vendas antes e depois do desconto')
         plt.xlabel('Desconto')
@@ -105,15 +105,15 @@ class Search:
         self.df['Mes'] = self.df['Data_Pedido'].dt.month
         self.df['Ano'] = self.df['Data_Pedido'].dt.year
         group = self.df.groupby(['Ano', 'Mes', 'Segmento'])['Valor_Venda'].agg([np.sum, np.mean, np.median])
-        anos = group.index.get_level_values(0)
-        meses = group.index.get_level_values(1)
-        segmentos = group.index.get_level_values(2)
+        years = group.index.get_level_values(0)
+        month = group.index.get_level_values(1)
+        seg = group.index.get_level_values(2)
         sea.relplot(kind = 'line',
                         data = group, 
                         y = 'mean', 
-                        x = meses,
-                        hue = segmentos, 
-                        col = anos,
+                        x = month,
+                        hue = seg, 
+                        col = years,
                         col_wrap = 4)
         plt.show()
 
@@ -121,7 +121,7 @@ class Search:
         df_dsa_p10 = self.df.groupby(['Categoria','SubCategoria']).sum(numeric_only = True).sort_values('Valor_Venda',ascending = False).head(12)
         df_dsa_p10 = df_dsa_p10[['Valor_Venda']].astype(int).sort_values(by = 'Categoria').reset_index()
         df_dsa_p10_cat = df_dsa_p10.groupby('Categoria').sum(numeric_only = True).reset_index()
-        cores_categorias = ['#5d00de',
+        color_category = ['#5d00de',
                     '#0ee84f',
                     '#e80e27']
         cores_subcategorias = ['#aa8cd4',
@@ -143,7 +143,7 @@ class Search:
                     radius = 1,
                     labels = df_dsa_p10_cat['Categoria'],
                     wedgeprops = dict(edgecolor = 'white'),
-                    colors = cores_categorias)
+                    colors = color_category)
 
         p2 = ax.pie(df_dsa_p10['Valor_Venda'],
                     radius = 0.9,
