@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sea
-import numpy as np
+import numpy as np 
 
 
 def autopct_format(values): 
@@ -29,6 +29,7 @@ class Search:
         plt.figure(figsize = (20, 6))
         group_data_value.plot(color = 'green')
         plt.xlabel('Data Pedido'),plt.ylabel('Valor Vendas'),plt.title('Total de vendas por data')
+        plt.savefig('./img/total_vendas_por_data.png')
         plt.show()
 
     def total_sales_by_state(self):   
@@ -38,6 +39,7 @@ class Search:
                     y = 'Valor_Venda', 
                     x = 'Estado').set(title = 'Vendas por ano')   
         plt.xticks(rotation = 80)
+        plt.savefig('./img/total_vendas_por_estado.png')
         plt.show()
 
     def top_10_cities_by_sales(self):
@@ -47,6 +49,7 @@ class Search:
         sea.barplot(data = group_city_value, 
                     y = 'Valor_Venda', 
                     x = 'Cidade').set(title = 'As 10 Cidades com Maior Total de Vendas ')
+        plt.savefig('./img/10_cidades_maior_vendas')
         plt.show()
 
     def segment_with_highest_sales(self):
@@ -64,6 +67,7 @@ class Search:
 
         plt.annotate(text = 'Total de Vendas: ' + '$ ' + str(int(sum(group_seg_sales['Valor_Venda']))), xy = (-0.25, 0))
         plt.title('Total de Vendas Por Segmento')
+        plt.savefig('./img/total_vendas_segmento')
         plt.show()
 
     def total_sales_by_segment_and_year(self):
@@ -77,6 +81,7 @@ class Search:
         plt.title('Vendas por ano e segmento')
         plt.xlabel('Ano')
         plt.ylabel('Valor de vendas')
+        plt.savefig('./img/total_vendas_ano_segmento')
 
         plt.show()
 
@@ -97,6 +102,7 @@ class Search:
         plt.title('Comparação de vendas antes e depois do desconto')
         plt.xlabel('Desconto')
         plt.ylabel('Valor médio de venda')
+        plt.savefig('./img/vendas_descontos')
 
         plt.show()
 
@@ -115,6 +121,7 @@ class Search:
                         hue = seg, 
                         col = years,
                         col_wrap = 4)
+        plt.savefig('./img/media_vendas_segmento_ano_mes')
         plt.show()
 
     def total_sales_by_subcategory_top12(self):
@@ -161,6 +168,8 @@ class Search:
         fig.gca().add_artist(centre_circle)
         plt.annotate(text = 'Total de Vendas: ' + '$ ' + str(int(sum(df_dsa_p10['Valor_Venda']))), xy = (-0.2, 0))
         plt.title('Total de Vendas Por Categoria e Top 12 SubCategorias')
+        plt.savefig('./img/top12_vendas_subcategoria')
+
         plt.show()
 
 
