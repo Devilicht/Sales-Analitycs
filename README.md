@@ -31,6 +31,13 @@ Esse é apenas uma consulta básica com pandas que retorna ``A cidade com maior 
 - Total de vendas por subcategoria (top 12)
 ![data](./img/top12_vendas_subcategoria.png)
 
+## Como usar:
+Caso queita testar o menu, as dependencias necessarias são:
 
+- pandas
+- numpy
+- seaborn
+- matplot
+ 
 Para instalar basta apenas usar o comando `` pip install -r requirements.txt``.
 Logo em seguida so executar o arquivo main.py.
