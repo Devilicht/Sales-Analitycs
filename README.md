@@ -20,7 +20,7 @@ Esse é apenas uma consulta básica com pandas que retorna ``A cidade com maior 
 ![data](./img/total_vendas_segmento.png)
 
 - Total de vendas por segmento e ano
- ![data](./img/total_vendas_ano_segmento.png)
+![data](./img/total_vendas_ano_segmento.png)
 
 - Desconto em vendas
 ![data](./img/vendas_descontos.png)
