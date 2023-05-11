@@ -41,3 +41,5 @@ Caso queita testar o menu, as dependencias necessarias são:
  
 Para instalar basta apenas usar o comando `` pip install -r requirements.txt``.
 Logo em seguida so executar o arquivo main.py.
+
+
