@@ -8,27 +8,35 @@ A logica do projeto se encontra em "features/data_query.py" que transforma as co
 Esse é apenas uma consulta básica com pandas que retorna ``A cidade com maior valor de vendas de produtos na categoria 'Materiais de escritório' é New York City``
 
 - Total de vendas por data
+ 
 ![data](./img/total_vendas_por_data.png)
 
 - Vendas por estado
+ 
 ![data](./img/total_vendas_por_estado.png)
 
 - As 10 cidades com maior total de vendas
+ 
 ![data](./img/10_cidades_maior_vendas.png)
 
 - Total de vendas por segmento 
+
 ![data](./img/total_vendas_segmento.png)
 
 - Total de vendas por segmento e ano
+
 ![data](./img/total_vendas_ano_segmento.png)
 
 - Desconto em vendas
+
 ![data](./img/vendas_descontos.png)
 
 - Média de vendas por segmento, ano e mês
+
 ![data](./img/media_vendas_segmento_ano_mes.png)
 
 - Total de vendas por subcategoria (top 12)
+
 ![data](./img/top12_vendas_subcategoria.png)
 
 ## Como usar:
